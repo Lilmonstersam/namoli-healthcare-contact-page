@@ -78,8 +78,8 @@ const Hero: React.FC = () => {
               <img src="https://www.namoli.com.au/wp-content/uploads/2022/06/issa-member-logo-converted.png" alt="ISSA Member" />
               <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/FCA-Member-logo-CMYK-300x169.jpg" alt="Franchise Council of Australia" />
               <img src="https://www.namoli.com.au/wp-content/uploads/2022/06/bscaa-300x152.png" alt="BSCAA Member" />
-              <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/DHAPartners2-removebg-preview.png" alt="DHA Partner" />
-              <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/Logo_Cm3_Contractor-Management-Prequalification-white.png" alt="Cm3 Prequalified" style={{background:'#003B5D', padding:'4px 8px', borderRadius:'4px'}} />
+              <img src="https://www.dayhospitalsaustralia.net.au/wp-content/uploads/2016/08/logo.png" alt="DHA Partner" />
+              <img src="https://www.cm3.com.au/wp-content/uploads/2022/07/Logo_Cm3_Contractor-Management-Prequalification.png" alt="Cm3 Prequalified" />
             </div>
           </div>
         </div>
