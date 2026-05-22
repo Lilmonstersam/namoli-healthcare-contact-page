@@ -1,0 +1,2267 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Clinical Cleaning Quote | Namoli Healthcare</title>
+  <meta name="description" content="Enquire about our clinical cleaning services and healthcare franchise business opportunities in Melbourne, Brisbane and Sydney. Request a free quote today.">
+  <meta name="theme-color" content="#003B5D">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       NAMOLI - CONTACT PAGE
+       ============================================ */
+
+    :root {
+      --color-primary: #003B5D;
+      --color-primary-hover: #002a42;
+      --color-accent: #FF5E84;
+      --color-accent-hover: #e04368;
+      --color-text: #1e293b;
+      --color-text-muted: #64748b;
+      --color-white: #FFFFFF;
+      --color-bg-light: #f8fafc;
+      --color-bg-warm: #EDF5FA;
+      --color-border: #e2e8f0;
+      --color-border-focus: #FF5E84;
+      --color-error: #dc2626;
+      --color-success: #16a34a;
+
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-2xl: 20px;
+
+      --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-elevated: 0 8px 32px rgba(0,0,0,0.1);
+
+      --transition-fast: 150ms ease;
+      --transition-base: 250ms ease;
+      --transition-slow: 400ms ease;
+    }
+
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-text);
+      background: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--color-accent); text-decoration: none; transition: color var(--transition-fast); }
+    a:hover { color: var(--color-accent-hover); }
+
+    /* Skip Link */
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--color-accent); color: var(--color-white);
+      padding: 8px 16px; border-radius: var(--radius-sm);
+      font-weight: 600; z-index: 9999; transition: top var(--transition-fast);
+    }
+    .skip-link:focus { top: 8px; color: var(--color-white); }
+
+    /* ============================================
+       TOP BAR
+       ============================================ */
+    .top-bar {
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-size: 13px;
+      padding: 8px 0;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .top-bar-left a,
+    .top-bar-left span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.8);
+      font-size: 12px;
+    }
+    .top-bar-left a:hover { color: var(--color-accent); }
+    .top-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .top-bar-right a {
+      color: rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+    }
+    .top-bar-right a:hover { color: var(--color-accent); }
+    .top-bar-divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,0.2);
+    }
+    .top-bar-login {
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .site-header {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-logo img {
+      height: 36px;
+      width: auto;
+    }
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header-phone {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-phone svg { color: var(--color-accent); }
+    .header-phone:hover { color: var(--color-accent); }
+    .btn-cta-header {
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 20px;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-cta-header:hover {
+      background: var(--color-accent-hover);
+      color: var(--color-white);
+      transform: translateY(-1px);
+    }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================
+       BREADCRUMB
+       ============================================ */
+    .breadcrumb {
+      padding: 14px 0;
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    .breadcrumb a { color: var(--color-text-muted); }
+    .breadcrumb a:hover { color: var(--color-accent); }
+    .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+
+    /* ============================================
+       HERO SECTION
+       ============================================ */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, #004e7a 100%);
+      padding: 56px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://www.namoli.com.au/wp-content/uploads/2023/01/Namoli-Office-Cleaning6-1024x683.jpg') center/cover;
+      opacity: 0.12;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--color-white);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .hero-content h1 .highlight {
+      color: var(--color-accent);
+    }
+    .hero-subtitle {
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.5;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      transition: background var(--transition-base), transform var(--transition-fast);
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-white);
+    }
+    .contact-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-2px);
+      color: var(--color-white);
+    }
+    .contact-card .icon-wrap {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--color-accent), #f5436a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-card .icon-wrap svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-white);
+    }
+    .contact-card-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 500;
+    }
+    .contact-card-value {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--color-white);
+    }
+
+    /* Hero right: social + locations */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .locations-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 24px 28px;
+    }
+    .locations-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .locations-card h3 svg { color: var(--color-accent); }
+    .locations-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .location-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+    }
+    .location-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    .social-strip {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      transition: background var(--transition-fast), transform var(--transition-fast);
+    }
+    .social-link:hover {
+      background: var(--color-accent);
+      transform: translateY(-2px);
+      color: var(--color-white);
+    }
+    .social-link svg { width: 18px; height: 18px; }
+
+    .trust-strip-hero {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .trust-badge-hero {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+    .trust-badge-hero svg {
+      width: 18px;
+      height: 18px;
+      color: var(--color-accent);
+      fill: currentColor;
+    }
+
+    /* ============================================
+       TRUST BADGES SECTION
+       ============================================ */
+    .cert-strip {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      padding: 24px 0;
+    }
+    .cert-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cert-strip-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+    }
+    .cert-strip-logos {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cert-strip-logos img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(20%);
+      opacity: 0.85;
+      transition: opacity var(--transition-base), filter var(--transition-base);
+    }
+    .cert-strip-logos img:hover {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    /* ============================================
+       FORM SECTION
+       ============================================ */
+    .form-section {
+      padding: 64px 0 80px;
+      background: var(--color-bg-light);
+    }
+    .form-section-inner {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .form-header .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+    .form-header h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .form-header p {
+      font-size: 15px;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Form Card */
+    .form-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-elevated);
+      overflow: hidden;
+    }
+
+    /* ============================================
+       PROGRESS INDICATOR
+       ============================================ */
+    .progress-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 28px 18px;
+      background: var(--color-bg-warm);
+      border-bottom: 1px solid var(--color-border);
+      gap: 0;
+    }
+    .progress-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    .progress-step:not(:last-child)::after {
+      content: "";
+      width: 40px;
+      height: 2px;
+      background: var(--color-border);
+      margin: 0 10px;
+      transition: background-color var(--transition-base);
+    }
+    .progress-step:not(:last-child).completed::after {
+      background: var(--color-accent);
+    }
+    .step-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--color-text-muted);
+      background: var(--color-white);
+      transition: border-color var(--transition-base), background-color var(--transition-base), color var(--transition-base), transform var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .progress-step.active .step-circle {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      color: var(--color-white);
+      transform: scale(1.08);
+    }
+    .progress-step.completed .step-circle {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+    .step-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      transition: color var(--transition-base);
+    }
+    .progress-step.active .step-label { color: var(--color-text); }
+    .progress-step.completed .step-label { color: var(--color-accent); }
+
+    /* ============================================
+       FORM STEPS
+       ============================================ */
+    .form-body {
+      padding: 28px 32px 32px;
+    }
+
+    .form-step {
+      display: none;
+      animation: fadeInUp 350ms ease forwards;
+    }
+    .form-step.active { display: block; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .form-step { animation: none; }
+    }
+
+    .step-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+    .step-subtitle {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* ============================================
+       ENQUIRY TYPE SELECTOR
+       ============================================ */
+    .enquiry-type-control {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .enquiry-type-option {
+      position: relative;
+    }
+    .enquiry-type-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .enquiry-type-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px 10px;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--color-border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .enquiry-type-label svg {
+      width: 22px;
+      height: 22px;
+      opacity: 0.6;
+      transition: opacity var(--transition-fast), color var(--transition-fast);
+    }
+    .enquiry-type-label:hover {
+      border-color: var(--color-accent);
+      color: var(--color-text);
+    }
+    .enquiry-type-label:hover svg { opacity: 0.8; }
+    .enquiry-type-option input[type="radio"]:checked + .enquiry-type-label {
+      border-color: var(--color-accent);
+      background: rgba(255, 94, 132, 0.06);
+      color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(255, 94, 132, 0.12);
+    }
+    .enquiry-type-option input[type="radio"]:checked + .enquiry-type-label svg {
+      opacity: 1;
+      color: var(--color-accent);
+    }
+    .enquiry-type-option input[type="radio"]:focus-visible + .enquiry-type-label {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    /* ============================================
+       FORM FIELDS
+       ============================================ */
+    .field-group {
+      margin-bottom: 18px;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 5px;
+    }
+    .field-label .required {
+      color: var(--color-accent);
+      margin-left: 2px;
+    }
+    .field-label .optional {
+      color: var(--color-text-muted);
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .field-input,
+    .field-select,
+    .field-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--color-text);
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .field-input:focus,
+    .field-select:focus,
+    .field-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(255, 94, 132, 0.1);
+    }
+    .field-input::placeholder,
+    .field-textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    .field-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .field-textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .field-hint {
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    .field-error {
+      font-size: 12px;
+      color: var(--color-error);
+      margin-top: 4px;
+      display: none;
+      align-items: center;
+      gap: 4px;
+    }
+    .field-error.visible { display: flex; }
+
+    .field-input.error,
+    .field-select.error { border-color: var(--color-error); }
+    .field-input.valid,
+    .field-select.valid { border-color: var(--color-success); }
+
+    /* Conditional sections */
+    .conditional-fields {
+      display: none;
+    }
+    .conditional-fields.visible {
+      display: block;
+      animation: fadeInUp 250ms ease forwards;
+    }
+
+    /* ============================================
+       SERVICE TYPE SELECTOR (For Quote)
+       ============================================ */
+    .service-type-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .service-type-option {
+      position: relative;
+    }
+    .service-type-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .service-type-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 18px 10px 14px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      text-align: center;
+      background: var(--color-white);
+    }
+    .service-type-card:hover {
+      border-color: var(--color-accent);
+      background: rgba(255, 94, 132, 0.02);
+    }
+    .service-type-option input[type="radio"]:checked + .service-type-card {
+      border-color: var(--color-accent);
+      background: rgba(255, 94, 132, 0.05);
+      box-shadow: 0 0 0 3px rgba(255, 94, 132, 0.12);
+    }
+    .service-type-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-type-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-primary);
+      opacity: 0.7;
+    }
+    .service-type-option input[type="radio"]:checked + .service-type-card .service-type-icon svg {
+      color: var(--color-accent);
+      opacity: 1;
+    }
+    .service-type-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+
+    /* ============================================
+       CLEANING FREQUENCY PILLS
+       ============================================ */
+    .radio-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .radio-pill { position: relative; }
+    .radio-pill input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .radio-pill-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-text);
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+      white-space: nowrap;
+    }
+    .radio-pill-label:hover { border-color: var(--color-accent); }
+    .radio-pill input[type="radio"]:checked + .radio-pill-label {
+      border-color: var(--color-accent);
+      background: rgba(255, 94, 132, 0.06);
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    /* ============================================
+       FILE UPLOAD
+       ============================================ */
+    .upload-zone {
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+      position: relative;
+    }
+    .upload-zone:hover {
+      border-color: var(--color-accent);
+      background: rgba(255, 94, 132, 0.02);
+    }
+    .upload-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .upload-zone svg {
+      width: 28px;
+      height: 28px;
+      color: var(--color-accent);
+      margin: 0 auto 6px;
+    }
+    .upload-zone-text {
+      font-size: 13px;
+      color: var(--color-text-muted);
+    }
+    .upload-zone-text strong { color: var(--color-accent); }
+    .upload-zone-hint {
+      font-size: 11px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       FORM NAVIGATION BUTTONS
+       ============================================ */
+    .form-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      transition: color var(--transition-fast), background-color var(--transition-fast);
+    }
+    .btn-back:hover {
+      color: var(--color-text);
+      background: var(--color-bg-warm);
+    }
+    .btn-next,
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: background-color var(--transition-fast), transform var(--transition-fast);
+    }
+    .btn-next {
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+    .btn-next:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-submit {
+      background: var(--color-accent);
+      color: var(--color-white);
+      font-size: 15px;
+      padding: 14px 36px;
+    }
+    .btn-submit:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+    .btn-next svg,
+    .btn-back svg,
+    .btn-submit svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ============================================
+       SIDEBAR
+       ============================================ */
+    .sidebar {
+      position: sticky;
+      top: 80px;
+    }
+    .sidebar-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .sidebar-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: var(--color-primary);
+    }
+
+    /* Trust Badges in Sidebar */
+    .trust-badges-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .trust-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      background: var(--color-bg-light);
+      border-radius: var(--radius-md);
+    }
+    .trust-badge-item img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+    .trust-badge-item span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    /* Testimonial */
+    .testimonial-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .testimonial-stars {
+      color: #f59e0b;
+      font-size: 16px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 13px;
+      color: var(--color-text);
+      line-height: 1.55;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .testimonial-author {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    .testimonial-role {
+      font-size: 11px;
+      color: var(--color-text-muted);
+    }
+
+    /* Privacy note */
+    .privacy-note {
+      font-size: 11px;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      padding: 14px 16px;
+      background: var(--color-bg-warm);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .privacy-note svg {
+      width: 16px;
+      height: 16px;
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Response time */
+    .response-time {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--color-text-muted);
+      margin-top: 12px;
+    }
+    .response-time svg {
+      width: 14px;
+      height: 14px;
+      color: var(--color-success);
+    }
+    .response-time strong { color: var(--color-text); }
+
+    /* What Happens Next */
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .process-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--color-text);
+    }
+    .process-step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 11px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       SUCCESS STATE
+       ============================================ */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 48px 28px;
+    }
+    .success-state.active {
+      display: block;
+      animation: fadeInUp 400ms ease forwards;
+    }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-success), #22c55e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .success-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-white);
+    }
+    .success-state h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--color-primary);
+    }
+    .success-state p {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      max-width: 380px;
+      margin: 0 auto 20px;
+      line-height: 1.5;
+    }
+    .success-next-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 340px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .success-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: var(--color-bg-light);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+    }
+    .success-step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .site-footer {
+      background: var(--color-primary);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 0 20px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 28px;
+    }
+    .footer-brand {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--color-white);
+    }
+    .footer-tagline {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .footer-col h5 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--color-accent);
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 7px;
+      transition: color var(--transition-fast);
+    }
+    .footer-col a:hover { color: var(--color-white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.5); }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .form-section-inner { grid-template-columns: 1fr; }
+      .sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .header-phone { display: none; }
+      .hero { padding: 36px 0 44px; }
+      .contact-cards {
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 8px;
+        padding-bottom: 4px;
+      }
+      .contact-card {
+        min-width: 220px;
+        scroll-snap-align: start;
+      }
+      .enquiry-type-control { grid-template-columns: 1fr; }
+      .service-type-grid { grid-template-columns: repeat(2, 1fr); }
+      .field-row { grid-template-columns: 1fr; }
+      .form-body { padding: 20px 18px 24px; }
+      .progress-bar { padding: 18px 14px 14px; }
+      .step-label { display: none; }
+      .progress-step:not(:last-child)::after { width: 28px; }
+      .form-section { padding: 36px 0 48px; }
+      .sidebar { grid-template-columns: 1fr; }
+      .cert-strip-logos img { height: 36px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .service-type-grid { grid-template-columns: 1fr 1fr; }
+      .btn-next, .btn-submit { width: 100%; justify-content: center; }
+      .form-nav { flex-direction: column-reverse; gap: 10px; }
+    }
+
+    /* Compliance & Checkbox fields styles */
+    .compliance-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .checkbox-field {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .checkbox-field input[type="checkbox"] {
+      margin-top: 4px;
+      accent-color: var(--color-accent);
+      width: auto;
+      height: auto;
+    }
+    .checkbox-text {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+    .privacy-note-step3 {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+
+    /* Review Summary styles */
+    .review-summary {
+      background: var(--color-bg-warm);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .review-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      line-height: 1.4;
+      border-bottom: 1px dashed var(--color-border);
+      padding-bottom: 8px;
+    }
+    .review-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .review-label {
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+    .review-value {
+      font-weight: 700;
+      color: var(--color-primary);
+      text-align: right;
+    }
+
+    /* Success state styles */
+    .success-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    @media (max-width: 480px) {
+      .success-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-form" class="skip-link">Skip to Enquiry Form</a>
+
+  <!-- ============================================
+       TOP BAR
+       ============================================ -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Brisbane, Melbourne &amp; Sydney
+        </span>
+        <a href="tel:1300626654">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          1300 626 654
+        </a>
+        <a href="mailto:info@namoli.com.au">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@namoli.com.au
+        </a>
+      </div>
+      <div class="top-bar-right">
+        <a href="https://www.facebook.com/namolicommercialcleaning/" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://au.linkedin.com/company/namoli-commercial-cleaning" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <div class="top-bar-divider"></div>
+        <a href="https://www.namoli.com.au/member-login/" class="top-bar-login">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:4px"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Client Login
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a href="https://www.namoli.com.au/healthcare-cleaning/" class="site-logo">
+        <img src="src/assets/namoli-healthcare-logo.webp" alt="Namoli Healthcare">
+      </a>
+      <div class="header-cta">
+        <a href="tel:1300626654" class="header-phone">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          1300&nbsp;626&nbsp;654
+        </a>
+        <a href="#main-form" class="btn-cta-header">Book Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================
+       BREADCRUMB
+       ============================================ -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <a href="https://www.namoli.com.au/healthcare-cleaning/">Home</a><span>›</span><strong>Contact Us</strong>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1>Clinical Clean. <span class="highlight">Certified Assurance.</span></h1>
+          <p class="hero-subtitle">Protecting the health of everyone in healthcare. Specialist sanitisation and infection control for clinics, hospitals, and aged care facilities.</p>
+
+          <div class="contact-cards">
+            <a href="tel:1300626654" class="contact-card">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-text">Call Clinic Advisor</div>
+                <div class="contact-card-value">1300&nbsp;626&nbsp;654</div>
+              </div>
+            </a>
+            <a href="mailto:info@namoli.com.au" class="contact-card">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-text">Email us</div>
+                <div class="contact-card-value">info@namoli.com.au</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="locations-card">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Clinical Services Australia-wide
+            </h3>
+            <div class="locations-list">
+              <div class="location-item"><span class="location-dot"></span> Brisbane &amp; QLD Clinical Network</div>
+              <div class="location-item"><span class="location-dot"></span> Melbourne &amp; VIC Health Regions</div>
+              <div class="location-item"><span class="location-dot"></span> Sydney &amp; NSW Medical Precincts</div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div class="social-strip">
+              <a href="https://www.facebook.com/namolicommercialcleaning/" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+              </a>
+              <a href="https://au.linkedin.com/company/namoli-commercial-cleaning" class="social-link" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+            <div class="trust-strip-hero">
+              <div class="trust-badge-hero">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 11l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                Infection Control Certified
+              </div>
+              <div class="trust-badge-hero">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                TGA-Approved Products
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CERTIFICATION STRIP
+       ============================================ -->
+  <div class="cert-strip">
+    <div class="container">
+      <div class="cert-strip-inner">
+        <span class="cert-strip-label">Clinical Trust &amp; Standards</span>
+        <div class="cert-strip-logos">
+          <img src="https://www.namoli.com.au/wp-content/uploads/2022/06/issa-member-logo-converted.png" alt="ISSA Member">
+          <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/FCA-Member-logo-CMYK-300x169.jpg" alt="Franchise Council of Australia">
+          <img src="https://www.namoli.com.au/wp-content/uploads/2022/06/bscaa-300x152.png" alt="BSCAA Member">
+          <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/DHAPartners2-removebg-preview.png" alt="DHA Partner">
+          <img src="https://www.namoli.com.au/wp-content/uploads/2021/10/Logo_Cm3_Contractor-Management-Prequalification-white.png" alt="Cm3 Prequalified" style="background:#003B5D;padding:4px 8px;border-radius:4px;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       FORM SECTION
+       ============================================ -->
+  <section class="form-section" id="main-form">
+    <div class="container">
+      <div class="form-header">
+        <div class="section-label" id="form-section-label">Enquire Now</div>
+        <h2 id="form-section-title">How Can We Help You?</h2>
+        <p id="form-section-subtitle">Choose your enquiry type below and we'll guide you through the right form.</p>
+      </div>
+
+      <div class="form-section-inner">
+        <div class="form-main">
+          <div class="form-card">
+            <!-- Progress Bar -->
+            <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Form progress">
+              <div class="progress-step active" data-step="1">
+                <div class="step-circle">1</div>
+                <span class="step-label">Quick Enquiry</span>
+              </div>
+              <div class="progress-step" data-step="2">
+                <div class="step-circle">2</div>
+                <span class="step-label">Details</span>
+              </div>
+              <div class="progress-step" data-step="3">
+                <div class="step-circle">3</div>
+                <span class="step-label">Submit</span>
+              </div>
+            </div>
+
+            <form id="contact_form" name="Namoli Healthcare Enquiry Form" aria-label="Namoli Healthcare Enquiry Form" method="post" novalidate>
+              <div class="form-body">
+
+                <!-- ========== STEP 1: QUICK ENQUIRY ========== -->
+                <div class="form-step active" id="step-1" role="group" aria-label="Step 1: Quick Enquiry">
+                  <h3 class="step-title">What are you enquiring about?</h3>
+                  <p class="step-subtitle">Select your enquiry type and provide your contact details.</p>
+
+                  <!-- Enquiry Type Selector -->
+                  <div class="enquiry-type-control" role="radiogroup" aria-label="Enquiry type">
+                    <label class="enquiry-type-option">
+                      <input type="radio" name="enquiry_type" value="quote" checked>
+                      <span class="enquiry-type-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H2v7l6.29 6.29c.94.94 2.48.94 3.42 0l4.58-4.58c.94-.94.94-2.48 0-3.42L9 5z"/><path d="M6 9h.01"/></svg>
+                        Request a Clinical Quote
+                      </span>
+                    </label>
+                    <label class="enquiry-type-option">
+                      <input type="radio" name="enquiry_type" value="franchise">
+                      <span class="enquiry-type-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                        Medical Cleaning Franchise
+                      </span>
+                    </label>
+                    <label class="enquiry-type-option">
+                      <input type="radio" name="enquiry_type" value="jobs">
+                      <span class="enquiry-type-label">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                        Clinical Careers
+                      </span>
+                    </label>
+                  </div>
+
+                  <!-- Contact Details (shared across all types) -->
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="field-first-name" class="field-label">First Name <span class="required" aria-label="required">*</span></label>
+                      <input type="text" id="field-first-name" name="first_name" class="field-input" placeholder="e.g. Sarah…" required autocomplete="given-name" spellcheck="false">
+                      <div class="field-error" id="first-name-error" role="alert">Please enter your first name</div>
+                    </div>
+                    <div class="field-group">
+                      <label for="field-last-name" class="field-label">Last Name <span class="required" aria-label="required">*</span></label>
+                      <input type="text" id="field-last-name" name="last_name" class="field-input" placeholder="e.g. Johnson…" required autocomplete="family-name" spellcheck="false">
+                      <div class="field-error" id="last-name-error" role="alert">Please enter your last name</div>
+                    </div>
+                  </div>
+
+                  <div class="field-row">
+                    <div class="field-group">
+                      <label for="field-email" class="field-label">Email <span class="required" aria-label="required">*</span></label>
+                      <input type="email" id="field-email" name="email" class="field-input" placeholder="e.g. sarah@company.com.au…" required autocomplete="email" spellcheck="false" inputmode="email">
+                      <div class="field-error" id="email-error" role="alert">Please enter a valid email address</div>
+                    </div>
+                    <div class="field-group">
+                      <label for="field-phone" class="field-label">Phone <span class="required" aria-label="required">*</span></label>
+                      <input type="tel" id="field-phone" name="phone" class="field-input" placeholder="e.g. 0412 345 678…" required autocomplete="tel" inputmode="tel">
+                      <div class="field-error" id="phone-error" role="alert">Please enter a valid phone number</div>
+                    </div>
+                  </div>
+
+                  <div class="field-group" id="company-field">
+                    <label for="field-company" class="field-label">Company / Facility Name <span class="required" aria-label="required">*</span></label>
+                    <input type="text" id="field-company" name="company" class="field-input" placeholder="e.g. St Mary's Medical Centre…" autocomplete="organization" spellcheck="false">
+                    <div class="field-error" id="company-error" role="alert">Please enter your company or facility name</div>
+                  </div>
+
+                  <div class="form-nav" id="step1-nav">
+                    <div></div>
+                    <button type="button" class="btn-next" id="btn-next-1" aria-label="Continue to Step 2">
+                      Next: Your Details
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ========== STEP 2: ENQUIRY DETAILS ========== -->
+                <div class="form-step" id="step-2" role="group" aria-label="Step 2: Enquiry Details">
+
+                  <!-- === QUOTE FIELDS === -->
+                  <div class="conditional-fields visible" id="quote-fields">
+                    <h3 class="step-title">Facility Details</h3>
+                    <p class="step-subtitle">Tell us about your facility and cleaning requirements.</p>
+
+                    <div class="field-group">
+                      <label class="field-label">Facility Type <span class="required">*</span></label>
+                      <div class="service-type-grid" role="radiogroup" aria-label="Facility type">
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Medical Centre / GP Clinic" required>
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 3v5a7.5 7.5 0 0 0 15 0V3" /><path d="M12 10.5v5.5" /><path d="M8 22h8" /><circle cx="12" cy="19" r="3" /></svg>
+                            </div>
+                            <span class="service-type-name">GP Clinic</span>
+                          </div>
+                        </label>
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Aged Care Facility">
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5.5c-1.5-1.5-4-1.5-5.5 0s-1.5 4 0 5.5l5.5 5.5 5.5-5.5c1.5-1.5 1.5-4 0-5.5s-4-1.5-5.5 0z" /><path d="M4 14c2 0 4 2 5 4M20 14c-2 0-4 2-5 4" stroke-linecap="round" /></svg>
+                            </div>
+                            <span class="service-type-name">Aged Care</span>
+                          </div>
+                        </label>
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Hospital / Day Surgery">
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14M9 5V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M12 9v4M10 11h4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </div>
+                            <span class="service-type-name">Hospital</span>
+                          </div>
+                        </label>
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Dental Practice">
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.5 2 6 3 6 6.5S7.5 13 8.5 15C9.5 17 9 20 10.5 21.5c1.5 1.5 2.5.5 2.5-1 0-1.5-.5-2.5 1-4 1.5 1.5 1 2.5 1 4 0 1.5 1 2.5 2.5 1C19 20 18.5 17 19.5 15c1-2 2.5-5 2.5-8.5S15.5 2 12 2z" stroke-linejoin="round" /></svg>
+                            </div>
+                            <span class="service-type-name">Dental</span>
+                          </div>
+                        </label>
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Specialist / Allied Health">
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 22h12M14 22a6 6 0 0 0-6-6M9 14h6M12 3a3 3 0 0 1 3 3v8a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3zM15 14l3 3" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                            </div>
+                            <span class="service-type-name">Specialist</span>
+                          </div>
+                        </label>
+                        <label class="service-type-option">
+                          <input type="radio" name="facility_type" value="Other Healthcare Facility">
+                          <div class="service-type-card">
+                            <div class="service-type-icon">
+                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round" /><path d="M12 8v8M8 12h8" stroke-linecap="round" /></svg>
+                            </div>
+                            <span class="service-type-name">Other Clinic</span>
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="field-group">
+                      <label class="field-label">Cleaning Frequency</label>
+                      <div class="radio-pills">
+                        <label class="radio-pill"><input type="radio" name="frequency" value="multiple-daily"><span class="radio-pill-label">Multiple Daily</span></label>
+                        <label class="radio-pill"><input type="radio" name="frequency" value="daily" checked><span class="radio-pill-label">Daily</span></label>
+                        <label class="radio-pill"><input type="radio" name="frequency" value="3-5x-week"><span class="radio-pill-label">3-5x Weekly</span></label>
+                        <label class="radio-pill"><input type="radio" name="frequency" value="weekly"><span class="radio-pill-label">Weekly</span></label>
+                        <label class="radio-pill"><input type="radio" name="frequency" value="one-off"><span class="radio-pill-label">One-off Deep Clean</span></label>
+                        <label class="radio-pill"><input type="radio" name="frequency" value="not-sure"><span class="radio-pill-label">Not Sure</span></label>
+                      </div>
+                    </div>
+
+                    <div class="field-row">
+                      <div class="field-group">
+                        <label for="field-suburb-postcode" class="field-label">Postcode or Suburb <span class="required">*</span></label>
+                        <input type="text" id="field-suburb-postcode" name="suburb_or_postcode" class="field-input" placeholder="e.g. 4000 or Brisbane…" autocomplete="address-level2">
+                        <div class="field-hint">Enter your facility's postcode or suburb</div>
+                        <div class="field-error" id="suburb-postcode-error" role="alert">Please enter the postcode or suburb</div>
+                      </div>
+                      <div class="field-group">
+                        <label for="field-approx-sqm" class="field-label">Approx. Floor Area <span class="optional">(optional)</span></label>
+                        <input type="text" id="field-approx-sqm" name="approx_sqm" class="field-input" placeholder="e.g. 500 sqm…" autocomplete="off">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- === FRANCHISE FIELDS === -->
+                  <div class="conditional-fields" id="franchise-fields">
+                    <h3 class="step-title">Franchise Interest</h3>
+                    <p class="step-subtitle">Tell us about your interest in a Namoli franchise.</p>
+
+                    <div class="field-group">
+                      <label for="field-franchise-region" class="field-label">Preferred Region <span class="required">*</span></label>
+                      <select id="field-franchise-region" name="franchise_region" class="field-select">
+                        <option value="" disabled selected>Select a region…</option>
+                        <option value="Brisbane">Brisbane &amp; QLD</option>
+                        <option value="Melbourne">Melbourne &amp; VIC</option>
+                        <option value="Sydney">Sydney &amp; NSW</option>
+                        <option value="Other">Other / Flexible</option>
+                      </select>
+                      <div class="field-error" id="franchise-region-error" role="alert">Please select a preferred region</div>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="field-franchise-investment" class="field-label">Investment Budget <span class="optional">(optional)</span></label>
+                      <select id="field-franchise-investment" name="franchise_investment" class="field-select">
+                        <option value="" disabled selected>Select a range…</option>
+                        <option value="under-30k">Under $30,000</option>
+                        <option value="30k-60k">$30,000 - $60,000</option>
+                        <option value="60k-100k">$60,000 - $100,000</option>
+                        <option value="100k-plus">$100,000+</option>
+                        <option value="not-sure">Not Sure Yet</option>
+                      </select>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="field-franchise-experience" class="field-label">Relevant Experience <span class="optional">(optional)</span></label>
+                      <textarea id="field-franchise-experience" name="franchise_experience" class="field-textarea" placeholder="Tell us about your background and what interests you about a cleaning franchise…" rows="3"></textarea>
+                    </div>
+                  </div>
+
+                  <!-- === JOB APPLICATION FIELDS === -->
+                  <div class="conditional-fields" id="jobs-fields">
+                    <h3 class="step-title">Job Application</h3>
+                    <p class="step-subtitle">We're always looking for dedicated cleaning professionals.</p>
+
+                    <div class="field-group">
+                      <label for="field-job-role" class="field-label">Position of Interest <span class="required">*</span></label>
+                      <select id="field-job-role" name="job_role" class="field-select">
+                        <option value="" disabled selected>Select a role…</option>
+                        <option value="cleaner">Cleaner / Team Member</option>
+                        <option value="team-leader">Team Leader / Supervisor</option>
+                        <option value="area-manager">Area Manager</option>
+                        <option value="admin">Administration / Support</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <div class="field-error" id="job-role-error" role="alert">Please select a position of interest</div>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="field-job-location" class="field-label">Preferred Location <span class="required">*</span></label>
+                      <select id="field-job-location" name="job_location" class="field-select">
+                        <option value="" disabled selected>Select a location…</option>
+                        <option value="Brisbane">Brisbane &amp; QLD</option>
+                        <option value="Melbourne">Melbourne &amp; VIC</option>
+                        <option value="Sydney">Sydney &amp; NSW</option>
+                        <option value="Flexible">Flexible / Willing to Relocate</option>
+                      </select>
+                      <div class="field-error" id="job-location-error" role="alert">Please select a preferred location</div>
+                    </div>
+
+                    <div class="field-group">
+                      <label class="field-label">Upload CV / Resume <span class="optional">(optional)</span></label>
+                      <div class="upload-zone" tabindex="0" role="button" aria-label="Upload your CV">
+                        <input type="file" name="cv_upload" id="field-cv" accept=".pdf,.doc,.docx" aria-label="Choose file to upload">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <div class="upload-zone-text"><strong>Click to upload</strong> or drag and drop</div>
+                        <div class="upload-zone-hint">PDF, DOC, DOCX: Max 10&nbsp;MB</div>
+                      </div>
+                    </div>
+
+                    <div class="field-group">
+                      <label for="field-job-availability" class="field-label">Availability <span class="optional">(optional)</span></label>
+                      <select id="field-job-availability" name="job_availability" class="field-select">
+                        <option value="" disabled selected>When can you start?</option>
+                        <option value="immediately">Immediately</option>
+                        <option value="1-week">Within 1 Week</option>
+                        <option value="2-weeks">Within 2 Weeks</option>
+                        <option value="1-month">Within 1 Month</option>
+                        <option value="negotiable">Negotiable</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-nav">
+                    <button type="button" class="btn-back" id="btn-back-2" aria-label="Go back to Step 1">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                      Back
+                    </button>
+                    <button type="button" class="btn-next" id="btn-next-2" aria-label="Continue to Step 3">
+                      Next: Review &amp; Submit
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ========== STEP 3: MESSAGE & SUBMIT ========== -->
+                <div class="form-step" id="step-3" role="group" aria-label="Step 3: Final Review and Submit">
+                  <h3 class="step-title">Final Review</h3>
+                  <p class="step-subtitle">Almost there! Add any final details and submit your request.</p>
+
+                  <!-- Review Summary -->
+                  <div class="review-summary">
+                    <div class="review-item">
+                      <span class="review-label">Enquiry Type</span>
+                      <span class="review-value" id="review-enquiry-type">-</span>
+                    </div>
+                    <div class="review-item">
+                      <span class="review-label">Contact</span>
+                      <span class="review-value" id="review-contact">-</span>
+                    </div>
+                    <div class="review-item" id="review-facility-item">
+                      <span class="review-label">Facility</span>
+                      <span class="review-value" id="review-facility">-</span>
+                    </div>
+                  </div>
+
+                  <!-- Compliance Standards Checklist (Quote flow only) -->
+                  <div class="field-group" id="compliance-checklist-group" style="margin-top: 20px; margin-bottom: 20px;">
+                    <label class="field-label">Required Compliance Standards <span class="optional">(select all that apply)</span></label>
+                    <div class="compliance-checklist">
+                      <label class="checkbox-field">
+                        <input type="checkbox" name="compliance_needs" value="RACGP Standards (GP Clinics)">
+                        <span class="checkbox-text">RACGP Standards (GP Clinics)</span>
+                      </label>
+                      <label class="checkbox-field">
+                        <input type="checkbox" name="compliance_needs" value="Aged Care Quality Standards (Standards 4 &amp; 5)">
+                        <span class="checkbox-text">Aged Care Quality Standards (Standards 4 &amp; 5)</span>
+                      </label>
+                      <label class="checkbox-field">
+                        <input type="checkbox" name="compliance_needs" value="National Safety and Quality Health Service (NSQHS) Standards">
+                        <span class="checkbox-text">National Safety and Quality Health Service (NSQHS) Standards</span>
+                      </label>
+                      <label class="checkbox-field">
+                        <input type="checkbox" name="compliance_needs" value="Standard Infection Control Protocols (CAP/ATP)">
+                        <span class="checkbox-text">Standard Infection Control Protocols (CAP/ATP)</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="field-group">
+                    <label for="field-comments" class="field-label">Additional Comments <span class="optional">(optional)</span></label>
+                    <textarea id="field-comments" name="comments" class="field-textarea" placeholder="Is there anything else we should know? Special access requirements, specific timing, etc…" rows="4"></textarea>
+                  </div>
+
+                  <!-- Privacy Checkbox -->
+                  <div class="field-group" style="margin-top: 20px;">
+                    <label class="checkbox-field">
+                      <input type="checkbox" id="field-privacy-agree" name="privacy_agree" required>
+                      <span class="checkbox-text">
+                        I agree to the <a href="https://www.namoli.com.au/privacy-policy/" target="_blank">Privacy Policy</a> and consent to being contacted regarding this enquiry.
+                      </span>
+                    </label>
+                    <div class="field-error" id="privacy-error" role="alert">Please agree to the privacy policy to continue.</div>
+                  </div>
+
+                  <div class="form-nav">
+                    <button type="button" class="btn-back" id="btn-back-3" aria-label="Go back to Step 2">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                      Back
+                    </button>
+                    <button type="submit" class="btn-submit" id="btn-submit">
+                      Send Enquiry
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                  </div>
+
+                  <p class="privacy-note-step3">
+                    <strong>Clinical Assurance:</strong> All staff are infection-control certified, police checked, and comply with clinical sanitisation standards. Your clinical data is protected.
+                  </p>
+                </div>
+
+                <!-- ========== SUCCESS STATE ========== -->
+                <div class="success-state" id="success-state">
+                  <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <h2 class="success-title" id="success-title">Enquiry Received</h2>
+                  <p class="success-message" id="success-text">
+                    Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility's requirements and arrange a clinical cleaning audit.
+                  </p>
+                  <div class="success-actions">
+                    <button type="button" class="btn-next" onclick="window.location.href = 'https://namoli.com.au'">
+                      Return to Homepage
+                    </button>
+                    <button type="button" class="btn-back" onclick="window.location.reload()">
+                      Send Another Enquiry
+                    </button>
+                  </div>
+                  <div class="success-footer" style="margin-top: 24px; text-align: center; font-size: 14px; color: var(--color-text-muted);">
+                    <p>Need urgent assistance? Call us on <a href="tel:1300626654" style="color: var(--color-accent); font-weight: 600;">1300 626 654</a></p>
+                  </div>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <!-- Clinical Standards -->
+          <div class="sidebar-card">
+            <h4>Clinical Standards</h4>
+            <div class="clinical-checks" style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+              <div style="display: flex; gap: 8px; font-size: 14px; align-items: flex-start;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FF5E84" stroke-width="3" style="flex-shrink: 0; margin-top: 3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>RACGP Standards:</strong> Tailored cleaning protocols aligned with clinical guidelines.</span>
+              </div>
+              <div style="display: flex; gap: 8px; font-size: 14px; align-items: flex-start;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FF5E84" stroke-width="3" style="flex-shrink: 0; margin-top: 3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Aged Care Standards:</strong> Compliant with Quality Standards 4 and 5.</span>
+              </div>
+              <div style="display: flex; gap: 8px; font-size: 14px; align-items: flex-start;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FF5E84" stroke-width="3" style="flex-shrink: 0; margin-top: 3px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Zero Cross-Contamination:</strong> Strict colour-coded microfibre system.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"Namoli's healthcare-certified team transformed our clinic's sanitation. Their attention to detail around high-touch clinical surfaces gives our staff and patients complete peace of mind. Excellent communication."</p>
+            <div class="testimonial-author">Dr Amanda Sterling</div>
+            <div class="testimonial-role">Practice Principal, Bayside Medical Centre</div>
+          </div>
+
+          <!-- What Happens Next -->
+          <div class="sidebar-card">
+            <h4>What Happens Next?</h4>
+            <div class="process-steps">
+              <div class="process-step">
+                <span class="process-step-num">1</span>
+                <span>We review your facility requirements and call to discuss your clinical needs.</span>
+              </div>
+              <div class="process-step">
+                <span class="process-step-num">2</span>
+                <span>We arrange a free on-site clinical risk assessment and cleaning audit.</span>
+              </div>
+              <div class="process-step">
+                <span class="process-step-num">3</span>
+                <span>You receive a detailed Clinical Assurance Proposal and quotation.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Namoli Healthcare</div>
+          <p class="footer-tagline">Clinical, compliance-driven cleaning and infection control solutions for medical practices, hospitals, and aged care facilities across Australia.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="https://www.namoli.com.au/medical-cleaning-services/">GP &amp; Medical Centres</a>
+          <a href="https://www.namoli.com.au/medical-cleaning-services/">Hospitals &amp; Day Surgeries</a>
+          <a href="https://www.namoli.com.au/medical-cleaning-services/">Aged Care Facilities</a>
+          <a href="https://www.namoli.com.au/medical-cleaning-services/">Dental &amp; Specialist Clinics</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="https://www.namoli.com.au/about-us/">Our Approach</a>
+          <a href="https://www.namoli.com.au/our-standards/">Clinical Standards</a>
+          <a href="https://www.namoli.com.au/franchise-opportunities/">Franchise Opportunities</a>
+          <a href="https://www.namoli.com.au/blog/">Healthcare Blog</a>
+        </div>
+        <div class="footer-col">
+          <h5>Get In Touch</h5>
+          <a href="tel:1300626654">1300 626 654</a>
+          <a href="mailto:info@namoli.com.au">info@namoli.com.au</a>
+          <a href="https://www.namoli.com.au/commercial-cleaning-brisbane/">Brisbane HQ</a>
+          <a href="https://www.namoli.com.au/commercial-cleaning-melbourne/">Melbourne Office</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Namoli Healthcare. All rights reserved. | <a href="https://www.namoli.com.au/privacy-policy/">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FORM LOGIC
+       ============================================ -->
+  <script>
+    (function() {
+      'use strict';
+
+      var form = document.getElementById('contact_form');
+      var steps = document.querySelectorAll('.form-step');
+      var progressSteps = document.querySelectorAll('.progress-step');
+      var progressBar = document.getElementById('progress-bar');
+      var currentStep = 1;
+      var currentEnquiryType = 'quote';
+
+      // Elements
+      var quoteFields = document.getElementById('quote-fields');
+      var franchiseFields = document.getElementById('franchise-fields');
+      var jobsFields = document.getElementById('jobs-fields');
+      var companyField = document.getElementById('company-field');
+      var complianceGroup = document.getElementById('compliance-checklist-group');
+      var sectionTitle = document.getElementById('form-section-title');
+      var sectionSubtitle = document.getElementById('form-section-subtitle');
+      var sectionLabel = document.getElementById('form-section-label');
+
+      // ============================================
+      // ENQUIRY TYPE SWITCHING
+      // ============================================
+      var enquiryRadios = document.querySelectorAll('input[name="enquiry_type"]');
+
+      function switchEnquiryType(type) {
+        currentEnquiryType = type;
+
+        // Hide all conditional fields
+        quoteFields.classList.remove('visible');
+        franchiseFields.classList.remove('visible');
+        jobsFields.classList.remove('visible');
+
+        if (type === 'quote') {
+          quoteFields.classList.add('visible');
+          companyField.style.display = '';
+          if (complianceGroup) complianceGroup.style.display = 'block';
+          sectionLabel.textContent = 'Clinical Quote';
+          sectionTitle.textContent = 'Request a Clinical Quote';
+          sectionSubtitle.innerHTML = 'Fill out the form below and our clinical solutions advisor will prepare a tailored proposal.';
+        } else if (type === 'franchise') {
+          franchiseFields.classList.add('visible');
+          companyField.style.display = 'none';
+          if (complianceGroup) complianceGroup.style.display = 'none';
+          sectionLabel.textContent = 'Franchise';
+          sectionTitle.textContent = 'Medical Franchise Opportunities';
+          sectionSubtitle.innerHTML = 'Own a premium clinical cleaning business. Tell us about your background and we\'ll be in touch.';
+        } else if (type === 'jobs') {
+          jobsFields.classList.add('visible');
+          companyField.style.display = 'none';
+          if (complianceGroup) complianceGroup.style.display = 'none';
+          sectionLabel.textContent = 'Clinical Careers';
+          sectionTitle.textContent = 'Clinical Cleaning Careers';
+          sectionSubtitle.innerHTML = 'Join Australia\'s leading healthcare-certified cleaning team. Apply below.';
+        }
+
+        // Reset to step 1 on type change
+        if (currentStep !== 1) {
+          goToStep(1);
+        }
+      }
+
+      enquiryRadios.forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          switchEnquiryType(this.value);
+        });
+      });
+
+      // ============================================
+      // NAVIGATION
+      // ============================================
+      document.getElementById('btn-next-1').addEventListener('click', function() {
+        if (validateStep(1)) goToStep(2);
+      });
+      document.getElementById('btn-next-2').addEventListener('click', function() {
+        if (validateStep(2)) goToStep(3);
+      });
+      document.getElementById('btn-back-2').addEventListener('click', function() {
+        goToStep(1);
+      });
+      document.getElementById('btn-back-3').addEventListener('click', function() {
+        goToStep(2);
+      });
+
+      // ============================================
+      // FORM SUBMISSION
+      // ============================================
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        if (!validateStep(3)) return;
+
+        var btn = document.getElementById('btn-submit');
+        btn.disabled = true;
+        btn.innerHTML = '<span>Sending...</span>';
+
+        setTimeout(function() {
+          steps.forEach(function(s) { s.classList.remove('active'); });
+          document.getElementById('success-state').classList.add('active');
+          progressBar.style.display = 'none';
+
+          // Customise success message
+          var successTitle = document.getElementById('success-title');
+          var successText = document.getElementById('success-text');
+
+          if (currentEnquiryType === 'franchise') {
+            successTitle.textContent = 'Application Received!';
+            successText.innerHTML = 'Our franchise team will review your interest and be in contact within 2 business days to discuss medical franchise opportunities.';
+          } else if (currentEnquiryType === 'jobs') {
+            successTitle.textContent = 'Application Submitted!';
+            successText.innerHTML = 'Thank you for your interest in joining Namoli Healthcare. Our clinical HR team will review your application and be in touch.';
+          } else {
+            successTitle.textContent = 'Enquiry Received';
+            successText.innerHTML = 'Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility\'s requirements and arrange a clinical cleaning audit.';
+          }
+        }, 1200);
+      });
+
+      // ============================================
+      // STEP NAVIGATION
+      // ============================================
+      function goToStep(step) {
+        currentStep = step;
+        steps.forEach(function(s) { s.classList.remove('active'); });
+        document.getElementById('step-' + step).classList.add('active');
+
+        if (step === 3) {
+          // Populate review summary
+          var eqTypeLabel = '';
+          if (currentEnquiryType === 'quote') eqTypeLabel = 'Clinical Quote';
+          else if (currentEnquiryType === 'franchise') eqTypeLabel = 'Franchise Opportunities';
+          else if (currentEnquiryType === 'jobs') eqTypeLabel = 'Clinical Careers';
+
+          document.getElementById('review-enquiry-type').textContent = eqTypeLabel;
+
+          var firstName = document.getElementById('field-first-name').value;
+          var lastName = document.getElementById('field-last-name').value;
+          var email = document.getElementById('field-email').value;
+          document.getElementById('review-contact').textContent = firstName + ' ' + lastName + ' (' + email + ')';
+
+          var facilityItem = document.getElementById('review-facility-item');
+          if (currentEnquiryType === 'quote') {
+            facilityItem.style.display = 'flex';
+            var facilityTypeRadio = document.querySelector('input[name="facility_type"]:checked');
+            var facilityTypeValue = facilityTypeRadio ? facilityTypeRadio.value : '';
+            var suburbOrPostcode = document.getElementById('field-suburb-postcode').value;
+            document.getElementById('review-facility').textContent = facilityTypeValue + ' in ' + suburbOrPostcode;
+          } else {
+            facilityItem.style.display = 'none';
+          }
+        }
+
+        progressSteps.forEach(function(ps, i) {
+          var stepNum = i + 1;
+          ps.classList.remove('active', 'completed');
+          if (stepNum === step) {
+            ps.classList.add('active');
+          } else if (stepNum < step) {
+            ps.classList.add('completed');
+            ps.querySelector('.step-circle').innerHTML = '✓';
+          } else {
+            ps.querySelector('.step-circle').innerHTML = String(stepNum);
+          }
+        });
+
+        progressBar.setAttribute('aria-valuenow', String(step));
+        document.querySelector('.form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      // ============================================
+      // VALIDATION
+      // ============================================
+      function validateStep(step) {
+        var valid = true;
+        if (step === 1) {
+          valid = validateField('field-first-name', 'first-name-error', function(v) { return v.trim().length >= 2; }) && valid;
+          valid = validateField('field-last-name', 'last-name-error', function(v) { return v.trim().length >= 2; }) && valid;
+          valid = validateField('field-email', 'email-error', function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }) && valid;
+          valid = validateField('field-phone', 'phone-error', function(v) { return v.replace(/\s/g,'').length >= 8; }) && valid;
+
+          if (currentEnquiryType === 'quote') {
+            valid = validateField('field-company', 'company-error', function(v) { return v.trim().length >= 2; }) && valid;
+          }
+        }
+        if (step === 2) {
+          if (currentEnquiryType === 'quote') {
+            var facilityType = document.querySelector('input[name="facility_type"]:checked');
+            var grid = document.querySelector('.service-type-grid');
+            if (!facilityType) {
+              valid = false;
+              grid.style.outline = '2px solid var(--color-error)';
+              grid.style.borderRadius = '12px';
+              setTimeout(function() {
+                grid.style.outline = 'none';
+              }, 3000);
+            }
+            valid = validateField('field-suburb-postcode', 'suburb-postcode-error', function(v) { return v.trim().length >= 2; }) && valid;
+          } else if (currentEnquiryType === 'franchise') {
+            valid = validateField('field-franchise-region', 'franchise-region-error', function(v) { return v !== ''; }) && valid;
+          } else if (currentEnquiryType === 'jobs') {
+            valid = validateField('field-job-role', 'job-role-error', function(v) { return v !== ''; }) && valid;
+            valid = validateField('field-job-location', 'job-location-error', function(v) { return v !== ''; }) && valid;
+          }
+        }
+        if (step === 3) {
+          var privacyCheck = document.getElementById('field-privacy-agree');
+          if (privacyCheck && !privacyCheck.checked) {
+            valid = false;
+            var privacyError = document.getElementById('privacy-error');
+            if (privacyError) privacyError.classList.add('visible');
+          }
+        }
+        return valid;
+      }
+
+      function validateField(fieldId, errorId, testFn) {
+        var field = document.getElementById(fieldId);
+        var error = document.getElementById(errorId);
+        if (!field || !error) return true;
+        var val = field.value;
+        if (!testFn(val)) {
+          field.classList.add('error');
+          field.classList.remove('valid');
+          error.classList.add('visible');
+          field.setAttribute('aria-invalid', 'true');
+          field.setAttribute('aria-describedby', errorId);
+          return false;
+        } else {
+          field.classList.remove('error');
+          field.classList.add('valid');
+          error.classList.remove('visible');
+          field.removeAttribute('aria-invalid');
+          return true;
+        }
+      }
+
+      // Inline validation on blur
+      var fieldsToValidate = [
+        { id: 'field-first-name', err: 'first-name-error', test: function(v) { return v.trim().length >= 2; } },
+        { id: 'field-last-name', err: 'last-name-error', test: function(v) { return v.trim().length >= 2; } },
+        { id: 'field-email', err: 'email-error', test: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); } },
+        { id: 'field-phone', err: 'phone-error', test: function(v) { return v.replace(/\s/g,'').length >= 8; } },
+        { id: 'field-company', err: 'company-error', test: function(v) { return v.trim().length >= 2; } },
+        { id: 'field-suburb-postcode', err: 'suburb-postcode-error', test: function(v) { return v.trim().length >= 2; } }
+      ];
+
+      fieldsToValidate.forEach(function(cfg) {
+        var el = document.getElementById(cfg.id);
+        if (!el) return;
+        el.addEventListener('blur', function() {
+          if (el.value.length > 0) {
+            validateField(cfg.id, cfg.err, cfg.test);
+          }
+        });
+        el.addEventListener('focus', function() {
+          el.classList.remove('error');
+          var errEl = document.getElementById(cfg.err);
+          if (errEl) errEl.classList.remove('visible');
+        });
+      });
+
+      // Change listeners for dropdowns to clear errors immediately
+      var selectsToValidate = ['field-franchise-region', 'field-job-role', 'field-job-location'];
+      selectsToValidate.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('change', function() {
+          validateField(id, id.replace('field-', '') + '-error', function(v) { return v !== ''; });
+        });
+      });
+
+      // Checkbox listener to clear error immediately
+      var privacyCheck = document.getElementById('field-privacy-agree');
+      if (privacyCheck) {
+        privacyCheck.addEventListener('change', function() {
+          if (privacyCheck.checked) {
+            document.getElementById('privacy-error').classList.remove('visible');
+          }
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>
