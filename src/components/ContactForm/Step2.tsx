@@ -13,14 +13,12 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
 
   const validate = () => {
     const newErrors: Record<string, string> = {}
-    if (data.enquiry_type === 'quote') {
+    if (data.enquiry_type === 'quote' || data.enquiry_type === 'swab') {
       if (!data.facility_type) newErrors.facility_type = 'Please select a facility type'
       if (!data.suburb_or_postcode.trim()) newErrors.suburb_or_postcode = 'Please enter the suburb or postcode'
-    } else if (data.enquiry_type === 'franchise') {
-      if (!data.franchise_region) newErrors.franchise_region = 'Please select a preferred region'
-    } else if (data.enquiry_type === 'jobs') {
-      if (!data.job_role) newErrors.job_role = 'Please select a position of interest'
-      if (!data.job_location) newErrors.job_location = 'Please select a preferred location'
+    }
+    if (data.enquiry_type === 'swab') {
+      if (!data.swab_purpose) newErrors.swab_purpose = 'Please select a swab test purpose'
     }
 
     setErrors(newErrors)
@@ -35,11 +33,17 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
 
   return (
     <div className="form-step active">
-      {/* QUOTE FIELDS */}
-      {data.enquiry_type === 'quote' && (
+      {/* SHARED FIELDS FOR QUOTE & SWAB */}
+      {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
         <div className="conditional-fields visible">
-          <h3 className="step-title">Facility Details</h3>
-          <p className="step-subtitle">Tell us about your facility and cleaning requirements.</p>
+          <h3 className="step-title">
+            {data.enquiry_type === 'swab' ? 'Swab Test Details' : 'Facility Details'}
+          </h3>
+          <p className="step-subtitle">
+            {data.enquiry_type === 'swab' 
+              ? 'Tell us about your facility and swab testing requirements.' 
+              : 'Tell us about your facility and cleaning requirements.'}
+          </p>
 
           <div className="field-group">
             <label className="field-label">Facility Type <span className="required">*</span></label>
@@ -125,30 +129,77 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
             {errors.facility_type && <div className="field-error visible">{errors.facility_type}</div>}
           </div>
 
-          <div className="field-group">
-            <label className="field-label">Cleaning Frequency</label>
-            <div className="radio-pills">
-              {[
-                { value: 'multiple-daily', label: 'Multiple Daily' },
-                { value: 'daily', label: 'Daily' },
-                { value: '3-5x-week', label: '3-5x Weekly' },
-                { value: 'weekly', label: 'Weekly' },
-                { value: 'one-off', label: 'One-off Deep Clean' },
-                { value: 'not-sure', label: 'Not Sure' }
-              ].map(freq => (
-                <label key={freq.value} className="radio-pill">
-                  <input 
-                    type="radio" 
-                    name="frequency" 
-                    value={freq.value} 
-                    checked={data.frequency === freq.value}
-                    onChange={e => updateData({ frequency: e.target.value })}
-                  />
-                  <span className="radio-pill-label">{freq.label}</span>
-                </label>
-              ))}
+          {/* Cleaning Frequency (Clinical Quote flow only) */}
+          {data.enquiry_type === 'quote' && (
+            <div className="field-group">
+              <label className="field-label">Cleaning Frequency</label>
+              <div className="radio-pills">
+                {[
+                  { value: 'multiple-daily', label: 'Multiple Daily' },
+                  { value: 'daily', label: 'Daily' },
+                  { value: '3-5x-week', label: '3-5x Weekly' },
+                  { value: 'weekly', label: 'Weekly' },
+                  { value: 'one-off', label: 'One-off Deep Clean' },
+                  { value: 'not-sure', label: 'Not Sure' }
+                ].map(freq => (
+                  <label key={freq.value} className="radio-pill">
+                    <input 
+                      type="radio" 
+                      name="frequency" 
+                      value={freq.value} 
+                      checked={data.frequency === freq.value}
+                      onChange={e => updateData({ frequency: e.target.value })}
+                    />
+                    <span className="radio-pill-label">{freq.label}</span>
+                  </label>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Swab Test specific fields */}
+          {data.enquiry_type === 'swab' && (
+            <>
+              <div className="field-group">
+                <label className="field-label">Swab Test Purpose <span className="required">*</span></label>
+                <select 
+                  className={`field-select ${errors.swab_purpose ? 'error' : ''}`}
+                  value={data.swab_purpose}
+                  onChange={e => updateData({ swab_purpose: e.target.value })}
+                >
+                  <option value="" disabled>Select purpose…</option>
+                  <option value="Routine Hygiene Audit">Routine Hygiene Audit</option>
+                  <option value="Post-Outbreak Verification">Post-Outbreak Verification</option>
+                  <option value="Infection Control Compliance">Infection Control Compliance</option>
+                  <option value="Other / Special Request">Other / Special Request</option>
+                </select>
+                {errors.swab_purpose && <div className="field-error visible">{errors.swab_purpose}</div>}
+              </div>
+
+              <div className="field-group">
+                <label className="field-label">Estimated Swab Points</label>
+                <div className="radio-pills">
+                  {[
+                    { value: '10-25', label: '10 - 25 points' },
+                    { value: '25-50', label: '25 - 50 points' },
+                    { value: '50-plus', label: '50+ points' },
+                    { value: 'not-sure', label: 'Not Sure' }
+                  ].map(pts => (
+                    <label key={pts.value} className="radio-pill">
+                      <input 
+                        type="radio" 
+                        name="swab_points" 
+                        value={pts.value} 
+                        checked={data.swab_points === pts.value}
+                        onChange={e => updateData({ swab_points: e.target.value })}
+                      />
+                      <span className="radio-pill-label">{pts.label}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
 
           <div className="field-row">
             <div className="field-group">
@@ -173,130 +224,6 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
                 onChange={e => updateData({ approx_sqm: e.target.value })}
               />
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* FRANCHISE FIELDS */}
-      {data.enquiry_type === 'franchise' && (
-        <div className="conditional-fields visible">
-          <h3 className="step-title">Franchise Interest</h3>
-          <p className="step-subtitle">Tell us about your interest in a Namoli franchise.</p>
-
-          <div className="field-group">
-            <label className="field-label">Preferred Region <span className="required">*</span></label>
-            <select 
-              className={`field-select ${errors.franchise_region ? 'error' : ''}`}
-              value={data.franchise_region}
-              onChange={e => updateData({ franchise_region: e.target.value })}
-            >
-              <option value="" disabled>Select a region…</option>
-              <option value="Brisbane">Brisbane &amp; QLD</option>
-              <option value="Melbourne">Melbourne &amp; VIC</option>
-              <option value="Sydney">Sydney &amp; NSW</option>
-              <option value="Other">Other / Flexible</option>
-            </select>
-            {errors.franchise_region && <div className="field-error visible">{errors.franchise_region}</div>}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Investment Budget <span className="optional">(optional)</span></label>
-            <select 
-              className="field-select"
-              value={data.franchise_investment}
-              onChange={e => updateData({ franchise_investment: e.target.value })}
-            >
-              <option value="" disabled>Select a range…</option>
-              <option value="under-30k">Under $30,000</option>
-              <option value="30k-60k">$30,000 - $60,000</option>
-              <option value="60k-100k">$60,000 - $100,000</option>
-              <option value="100k-plus">$100,000+</option>
-              <option value="not-sure">Not Sure Yet</option>
-            </select>
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Relevant Experience <span className="optional">(optional)</span></label>
-            <textarea 
-              className="field-textarea" 
-              placeholder="Tell us about your background and what interests you about a cleaning franchise…" 
-              rows={3}
-              value={data.franchise_experience}
-              onChange={e => updateData({ franchise_experience: e.target.value })}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* JOBS FIELDS */}
-      {data.enquiry_type === 'jobs' && (
-        <div className="conditional-fields visible">
-          <h3 className="step-title">Job Application</h3>
-          <p className="step-subtitle">We're always looking for dedicated cleaning professionals.</p>
-
-          <div className="field-group">
-            <label className="field-label">Position of Interest <span className="required">*</span></label>
-            <select 
-              className={`field-select ${errors.job_role ? 'error' : ''}`}
-              value={data.job_role}
-              onChange={e => updateData({ job_role: e.target.value })}
-            >
-              <option value="" disabled>Select a role…</option>
-              <option value="cleaner">Cleaner / Team Member</option>
-              <option value="team-leader">Team Leader / Supervisor</option>
-              <option value="area-manager">Area Manager</option>
-              <option value="admin">Administration / Support</option>
-              <option value="other">Other</option>
-            </select>
-            {errors.job_role && <div className="field-error visible">{errors.job_role}</div>}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Preferred Location <span className="required">*</span></label>
-            <select 
-              className={`field-select ${errors.job_location ? 'error' : ''}`}
-              value={data.job_location}
-              onChange={e => updateData({ job_location: e.target.value })}
-            >
-              <option value="" disabled>Select a location…</option>
-              <option value="Brisbane">Brisbane &amp; QLD</option>
-              <option value="Melbourne">Melbourne &amp; VIC</option>
-              <option value="Sydney">Sydney &amp; NSW</option>
-              <option value="Flexible">Flexible / Willing to Relocate</option>
-            </select>
-            {errors.job_location && <div className="field-error visible">{errors.job_location}</div>}
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Upload CV / Resume <span className="optional">(optional)</span></label>
-            <div className="upload-zone" tabIndex={0} role="button">
-              <input 
-                type="file" 
-                accept=".pdf,.doc,.docx"
-                onChange={e => updateData({ cv_upload: e.target.files ? e.target.files[0] : null })}
-              />
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              <div className="upload-zone-text">
-                {data.cv_upload ? <strong>{data.cv_upload.name}</strong> : <><strong>Click to upload</strong> or drag and drop</>}
-              </div>
-              <div className="upload-zone-hint">PDF, DOC, DOCX: Max 10&nbsp;MB</div>
-            </div>
-          </div>
-
-          <div className="field-group">
-            <label className="field-label">Availability <span className="optional">(optional)</span></label>
-            <select 
-              className="field-select"
-              value={data.job_availability}
-              onChange={e => updateData({ job_availability: e.target.value })}
-            >
-              <option value="" disabled>When can you start?</option>
-              <option value="immediately">Immediately</option>
-              <option value="1-week">Within 1 Week</option>
-              <option value="2-weeks">Within 2 Weeks</option>
-              <option value="1-month">Within 1 Month</option>
-              <option value="negotiable">Negotiable</option>
-            </select>
           </div>
         </div>
       )}

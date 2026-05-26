@@ -1404,7 +1404,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>Clinical Clean. <span class="highlight">Certified Assurance.</span></h1>
+          <h1>Clinical Cleaning. <span class="highlight">Certified Assurance.</span></h1>
           <p class="hero-subtitle">Protecting the health of everyone in healthcare. Specialist sanitisation and infection control for clinics, hospitals, and aged care facilities.</p>
 
           <div class="contact-cards">
@@ -1533,17 +1533,10 @@
                       </span>
                     </label>
                     <label class="enquiry-type-option">
-                      <input type="radio" name="enquiry_type" value="franchise">
+                      <input type="radio" name="enquiry_type" value="swab">
                       <span class="enquiry-type-label">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-                        Medical Cleaning Franchise
-                      </span>
-                    </label>
-                    <label class="enquiry-type-option">
-                      <input type="radio" name="enquiry_type" value="jobs">
-                      <span class="enquiry-type-label">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-                        Clinical Careers
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 3h15" stroke-linecap="round" /><path d="M6 3v12c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4V3" /><path d="M9 12h6M9 8h6" stroke-linecap="round" /><circle cx="12" cy="12" r="2" /></svg>
+                        Request a Swab Test
                       </span>
                     </label>
                   </div>
@@ -1593,10 +1586,10 @@
                 <!-- ========== STEP 2: ENQUIRY DETAILS ========== -->
                 <div class="form-step" id="step-2" role="group" aria-label="Step 2: Enquiry Details">
 
-                  <!-- === QUOTE FIELDS === -->
-                  <div class="conditional-fields visible" id="quote-fields">
-                    <h3 class="step-title">Facility Details</h3>
-                    <p class="step-subtitle">Tell us about your facility and cleaning requirements.</p>
+                  <!-- === FACILITY DETAILS (SHARED) === -->
+                  <div class="conditional-fields visible" id="facility-fields">
+                    <h3 class="step-title" id="step2-title">Facility Details</h3>
+                    <p class="step-subtitle" id="step2-subtitle">Tell us about your facility and cleaning requirements.</p>
 
                     <div class="field-group">
                       <label class="field-label">Facility Type <span class="required">*</span></label>
@@ -1658,7 +1651,8 @@
                       </div>
                     </div>
 
-                    <div class="field-group">
+                    <!-- Cleaning Frequency (Clinical Quote flow only) -->
+                    <div class="field-group" id="frequency-field-group">
                       <label class="field-label">Cleaning Frequency</label>
                       <div class="radio-pills">
                         <label class="radio-pill"><input type="radio" name="frequency" value="multiple-daily"><span class="radio-pill-label">Multiple Daily</span></label>
@@ -1667,6 +1661,30 @@
                         <label class="radio-pill"><input type="radio" name="frequency" value="weekly"><span class="radio-pill-label">Weekly</span></label>
                         <label class="radio-pill"><input type="radio" name="frequency" value="one-off"><span class="radio-pill-label">One-off Deep Clean</span></label>
                         <label class="radio-pill"><input type="radio" name="frequency" value="not-sure"><span class="radio-pill-label">Not Sure</span></label>
+                      </div>
+                    </div>
+
+                    <!-- Swab Test Purpose (Swab Test flow only) -->
+                    <div class="field-group" id="swab-purpose-field-group" style="display: none;">
+                      <label for="field-swab-purpose" class="field-label">Swab Test Purpose <span class="required">*</span></label>
+                      <select id="field-swab-purpose" name="swab_purpose" class="field-select">
+                        <option value="" disabled selected>Select purpose…</option>
+                        <option value="Routine Hygiene Audit">Routine Hygiene Audit</option>
+                        <option value="Post-Outbreak Verification">Post-Outbreak Verification</option>
+                        <option value="Infection Control Compliance">Infection Control Compliance</option>
+                        <option value="Other / Special Request">Other / Special Request</option>
+                      </select>
+                      <div class="field-error" id="swab-purpose-error" role="alert">Please select a swab test purpose</div>
+                    </div>
+
+                    <!-- Estimated Swab Points (Swab Test flow only) -->
+                    <div class="field-group" id="swab-points-field-group" style="display: none;">
+                      <label class="field-label">Estimated Swab Points</label>
+                      <div class="radio-pills">
+                        <label class="radio-pill"><input type="radio" name="swab_points" value="10-25" checked><span class="radio-pill-label">10 - 25 points</span></label>
+                        <label class="radio-pill"><input type="radio" name="swab_points" value="25-50"><span class="radio-pill-label">25 - 50 points</span></label>
+                        <label class="radio-pill"><input type="radio" name="swab_points" value="50-plus"><span class="radio-pill-label">50+ points</span></label>
+                        <label class="radio-pill"><input type="radio" name="swab_points" value="not-sure"><span class="radio-pill-label">Not Sure</span></label>
                       </div>
                     </div>
 
@@ -1681,94 +1699,6 @@
                         <label for="field-approx-sqm" class="field-label">Approx. Floor Area <span class="optional">(optional)</span></label>
                         <input type="text" id="field-approx-sqm" name="approx_sqm" class="field-input" placeholder="e.g. 500 sqm…" autocomplete="off">
                       </div>
-                    </div>
-                  </div>
-
-                  <!-- === FRANCHISE FIELDS === -->
-                  <div class="conditional-fields" id="franchise-fields">
-                    <h3 class="step-title">Franchise Interest</h3>
-                    <p class="step-subtitle">Tell us about your interest in a Namoli franchise.</p>
-
-                    <div class="field-group">
-                      <label for="field-franchise-region" class="field-label">Preferred Region <span class="required">*</span></label>
-                      <select id="field-franchise-region" name="franchise_region" class="field-select">
-                        <option value="" disabled selected>Select a region…</option>
-                        <option value="Brisbane">Brisbane &amp; QLD</option>
-                        <option value="Melbourne">Melbourne &amp; VIC</option>
-                        <option value="Sydney">Sydney &amp; NSW</option>
-                        <option value="Other">Other / Flexible</option>
-                      </select>
-                      <div class="field-error" id="franchise-region-error" role="alert">Please select a preferred region</div>
-                    </div>
-
-                    <div class="field-group">
-                      <label for="field-franchise-investment" class="field-label">Investment Budget <span class="optional">(optional)</span></label>
-                      <select id="field-franchise-investment" name="franchise_investment" class="field-select">
-                        <option value="" disabled selected>Select a range…</option>
-                        <option value="under-30k">Under $30,000</option>
-                        <option value="30k-60k">$30,000 - $60,000</option>
-                        <option value="60k-100k">$60,000 - $100,000</option>
-                        <option value="100k-plus">$100,000+</option>
-                        <option value="not-sure">Not Sure Yet</option>
-                      </select>
-                    </div>
-
-                    <div class="field-group">
-                      <label for="field-franchise-experience" class="field-label">Relevant Experience <span class="optional">(optional)</span></label>
-                      <textarea id="field-franchise-experience" name="franchise_experience" class="field-textarea" placeholder="Tell us about your background and what interests you about a cleaning franchise…" rows="3"></textarea>
-                    </div>
-                  </div>
-
-                  <!-- === JOB APPLICATION FIELDS === -->
-                  <div class="conditional-fields" id="jobs-fields">
-                    <h3 class="step-title">Job Application</h3>
-                    <p class="step-subtitle">We're always looking for dedicated cleaning professionals.</p>
-
-                    <div class="field-group">
-                      <label for="field-job-role" class="field-label">Position of Interest <span class="required">*</span></label>
-                      <select id="field-job-role" name="job_role" class="field-select">
-                        <option value="" disabled selected>Select a role…</option>
-                        <option value="cleaner">Cleaner / Team Member</option>
-                        <option value="team-leader">Team Leader / Supervisor</option>
-                        <option value="area-manager">Area Manager</option>
-                        <option value="admin">Administration / Support</option>
-                        <option value="other">Other</option>
-                      </select>
-                      <div class="field-error" id="job-role-error" role="alert">Please select a position of interest</div>
-                    </div>
-
-                    <div class="field-group">
-                      <label for="field-job-location" class="field-label">Preferred Location <span class="required">*</span></label>
-                      <select id="field-job-location" name="job_location" class="field-select">
-                        <option value="" disabled selected>Select a location…</option>
-                        <option value="Brisbane">Brisbane &amp; QLD</option>
-                        <option value="Melbourne">Melbourne &amp; VIC</option>
-                        <option value="Sydney">Sydney &amp; NSW</option>
-                        <option value="Flexible">Flexible / Willing to Relocate</option>
-                      </select>
-                      <div class="field-error" id="job-location-error" role="alert">Please select a preferred location</div>
-                    </div>
-
-                    <div class="field-group">
-                      <label class="field-label">Upload CV / Resume <span class="optional">(optional)</span></label>
-                      <div class="upload-zone" tabindex="0" role="button" aria-label="Upload your CV">
-                        <input type="file" name="cv_upload" id="field-cv" accept=".pdf,.doc,.docx" aria-label="Choose file to upload">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        <div class="upload-zone-text"><strong>Click to upload</strong> or drag and drop</div>
-                        <div class="upload-zone-hint">PDF, DOC, DOCX: Max 10&nbsp;MB</div>
-                      </div>
-                    </div>
-
-                    <div class="field-group">
-                      <label for="field-job-availability" class="field-label">Availability <span class="optional">(optional)</span></label>
-                      <select id="field-job-availability" name="job_availability" class="field-select">
-                        <option value="" disabled selected>When can you start?</option>
-                        <option value="immediately">Immediately</option>
-                        <option value="1-week">Within 1 Week</option>
-                        <option value="2-weeks">Within 2 Weeks</option>
-                        <option value="1-month">Within 1 Month</option>
-                        <option value="negotiable">Negotiable</option>
-                      </select>
                     </div>
                   </div>
 
@@ -1802,6 +1732,14 @@
                     <div class="review-item" id="review-facility-item">
                       <span class="review-label">Facility</span>
                       <span class="review-value" id="review-facility">-</span>
+                    </div>
+                    <div class="review-item" id="review-swab-purpose-item" style="display: none;">
+                      <span class="review-label">Swab Purpose</span>
+                      <span class="review-value" id="review-swab-purpose">-</span>
+                    </div>
+                    <div class="review-item" id="review-swab-points-item" style="display: none;">
+                      <span class="review-label">Swab Points</span>
+                      <span class="review-value" id="review-swab-points">-</span>
                     </div>
                   </div>
 
@@ -1992,9 +1930,10 @@
       var currentEnquiryType = 'quote';
 
       // Elements
-      var quoteFields = document.getElementById('quote-fields');
-      var franchiseFields = document.getElementById('franchise-fields');
-      var jobsFields = document.getElementById('jobs-fields');
+      var facilityFields = document.getElementById('facility-fields');
+      var frequencyFieldGroup = document.getElementById('frequency-field-group');
+      var swabPurposeFieldGroup = document.getElementById('swab-purpose-field-group');
+      var swabPointsFieldGroup = document.getElementById('swab-points-field-group');
       var companyField = document.getElementById('company-field');
       var complianceGroup = document.getElementById('compliance-checklist-group');
       var sectionTitle = document.getElementById('form-section-title');
@@ -2009,32 +1948,24 @@
       function switchEnquiryType(type) {
         currentEnquiryType = type;
 
-        // Hide all conditional fields
-        quoteFields.classList.remove('visible');
-        franchiseFields.classList.remove('visible');
-        jobsFields.classList.remove('visible');
-
         if (type === 'quote') {
-          quoteFields.classList.add('visible');
+          frequencyFieldGroup.style.display = 'block';
+          swabPurposeFieldGroup.style.display = 'none';
+          swabPointsFieldGroup.style.display = 'none';
           companyField.style.display = '';
           if (complianceGroup) complianceGroup.style.display = 'block';
           sectionLabel.textContent = 'Clinical Quote';
           sectionTitle.textContent = 'Request a Clinical Quote';
           sectionSubtitle.innerHTML = 'Fill out the form below and our clinical solutions advisor will prepare a tailored proposal.';
-        } else if (type === 'franchise') {
-          franchiseFields.classList.add('visible');
-          companyField.style.display = 'none';
-          if (complianceGroup) complianceGroup.style.display = 'none';
-          sectionLabel.textContent = 'Franchise';
-          sectionTitle.textContent = 'Medical Franchise Opportunities';
-          sectionSubtitle.innerHTML = 'Own a premium clinical cleaning business. Tell us about your background and we\'ll be in touch.';
-        } else if (type === 'jobs') {
-          jobsFields.classList.add('visible');
-          companyField.style.display = 'none';
-          if (complianceGroup) complianceGroup.style.display = 'none';
-          sectionLabel.textContent = 'Clinical Careers';
-          sectionTitle.textContent = 'Clinical Cleaning Careers';
-          sectionSubtitle.innerHTML = 'Join Australia\'s leading healthcare-certified cleaning team. Apply below.';
+        } else if (type === 'swab') {
+          frequencyFieldGroup.style.display = 'none';
+          swabPurposeFieldGroup.style.display = 'block';
+          swabPointsFieldGroup.style.display = 'block';
+          companyField.style.display = '';
+          if (complianceGroup) complianceGroup.style.display = 'block';
+          sectionLabel.textContent = 'Swab Test';
+          sectionTitle.textContent = 'Request a Swab Test';
+          sectionSubtitle.innerHTML = 'Fill out the form below to request a clinical swab test audit for hygiene and sanitisation verification.';
         }
 
         // Reset to step 1 on type change
@@ -2085,12 +2016,9 @@
           var successTitle = document.getElementById('success-title');
           var successText = document.getElementById('success-text');
 
-          if (currentEnquiryType === 'franchise') {
-            successTitle.textContent = 'Application Received!';
-            successText.innerHTML = 'Our franchise team will review your interest and be in contact within 2 business days to discuss medical franchise opportunities.';
-          } else if (currentEnquiryType === 'jobs') {
-            successTitle.textContent = 'Application Submitted!';
-            successText.innerHTML = 'Thank you for your interest in joining Namoli Healthcare. Our clinical HR team will review your application and be in touch.';
+          if (currentEnquiryType === 'swab') {
+            successTitle.textContent = 'Enquiry Received';
+            successText.innerHTML = 'Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility\'s requirements and arrange a clinical swab test audit.';
           } else {
             successTitle.textContent = 'Enquiry Received';
             successText.innerHTML = 'Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility\'s requirements and arrange a clinical cleaning audit.';
@@ -2110,8 +2038,7 @@
           // Populate review summary
           var eqTypeLabel = '';
           if (currentEnquiryType === 'quote') eqTypeLabel = 'Clinical Quote';
-          else if (currentEnquiryType === 'franchise') eqTypeLabel = 'Franchise Opportunities';
-          else if (currentEnquiryType === 'jobs') eqTypeLabel = 'Clinical Careers';
+          else if (currentEnquiryType === 'swab') eqTypeLabel = 'Swab Test';
 
           document.getElementById('review-enquiry-type').textContent = eqTypeLabel;
 
@@ -2121,7 +2048,10 @@
           document.getElementById('review-contact').textContent = firstName + ' ' + lastName + ' (' + email + ')';
 
           var facilityItem = document.getElementById('review-facility-item');
-          if (currentEnquiryType === 'quote') {
+          var swabPurposeItem = document.getElementById('review-swab-purpose-item');
+          var swabPointsItem = document.getElementById('review-swab-points-item');
+
+          if (currentEnquiryType === 'quote' || currentEnquiryType === 'swab') {
             facilityItem.style.display = 'flex';
             var facilityTypeRadio = document.querySelector('input[name="facility_type"]:checked');
             var facilityTypeValue = facilityTypeRadio ? facilityTypeRadio.value : '';
@@ -2129,6 +2059,25 @@
             document.getElementById('review-facility').textContent = facilityTypeValue + ' in ' + suburbOrPostcode;
           } else {
             facilityItem.style.display = 'none';
+          }
+
+          if (currentEnquiryType === 'swab') {
+            swabPurposeItem.style.display = 'flex';
+            swabPointsItem.style.display = 'flex';
+            
+            var purposeSelect = document.getElementById('field-swab-purpose');
+            document.getElementById('review-swab-purpose').textContent = purposeSelect ? purposeSelect.value : '';
+            
+            var swabPointsRadio = document.querySelector('input[name="swab_points"]:checked');
+            var swabPointsVal = swabPointsRadio ? swabPointsRadio.value : '';
+            var swabPointsLabel = swabPointsVal;
+            if (swabPointsVal === '50-plus') swabPointsLabel = '50+ points';
+            else if (swabPointsVal === 'not-sure') swabPointsLabel = 'Not Sure';
+            else if (swabPointsVal) swabPointsLabel = swabPointsVal + ' points';
+            document.getElementById('review-swab-points').textContent = swabPointsLabel;
+          } else {
+            swabPurposeItem.style.display = 'none';
+            swabPointsItem.style.display = 'none';
           }
         }
 
@@ -2160,12 +2109,12 @@
           valid = validateField('field-email', 'email-error', function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }) && valid;
           valid = validateField('field-phone', 'phone-error', function(v) { return v.replace(/\s/g,'').length >= 8; }) && valid;
 
-          if (currentEnquiryType === 'quote') {
+          if (currentEnquiryType === 'quote' || currentEnquiryType === 'swab') {
             valid = validateField('field-company', 'company-error', function(v) { return v.trim().length >= 2; }) && valid;
           }
         }
         if (step === 2) {
-          if (currentEnquiryType === 'quote') {
+          if (currentEnquiryType === 'quote' || currentEnquiryType === 'swab') {
             var facilityType = document.querySelector('input[name="facility_type"]:checked');
             var grid = document.querySelector('.service-type-grid');
             if (!facilityType) {
@@ -2177,11 +2126,9 @@
               }, 3000);
             }
             valid = validateField('field-suburb-postcode', 'suburb-postcode-error', function(v) { return v.trim().length >= 2; }) && valid;
-          } else if (currentEnquiryType === 'franchise') {
-            valid = validateField('field-franchise-region', 'franchise-region-error', function(v) { return v !== ''; }) && valid;
-          } else if (currentEnquiryType === 'jobs') {
-            valid = validateField('field-job-role', 'job-role-error', function(v) { return v !== ''; }) && valid;
-            valid = validateField('field-job-location', 'job-location-error', function(v) { return v !== ''; }) && valid;
+          }
+          if (currentEnquiryType === 'swab') {
+            valid = validateField('field-swab-purpose', 'swab-purpose-error', function(v) { return v !== ''; }) && valid;
           }
         }
         if (step === 3) {
@@ -2242,7 +2189,7 @@
       });
 
       // Change listeners for dropdowns to clear errors immediately
-      var selectsToValidate = ['field-franchise-region', 'field-job-role', 'field-job-location'];
+      var selectsToValidate = ['field-swab-purpose'];
       selectsToValidate.forEach(function(id) {
         var el = document.getElementById(id);
         if (!el) return;

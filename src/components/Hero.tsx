@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
         <div className="container">
           <div className="hero-inner">
             <div className="hero-content">
-              <h1>Clinical Clean. <span className="highlight">Certified Assurance.</span></h1>
+              <h1>Clinical Cleaning. <span className="highlight">Certified Assurance.</span></h1>
               <p className="hero-subtitle">Protecting the health of everyone in healthcare. Specialist sanitisation and infection control for clinics, hospitals, and aged care facilities.</p>
 
               <div className="contact-cards">

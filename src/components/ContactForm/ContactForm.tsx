@@ -5,7 +5,7 @@ import Step3 from './Step3'
 import SuccessState from './SuccessState'
 import ProgressBar from './ProgressBar'
 
-export type EnquiryType = 'quote' | 'franchise' | 'jobs'
+export type EnquiryType = 'quote' | 'swab'
 
 export interface FormData {
   enquiry_type: EnquiryType
@@ -14,20 +14,14 @@ export interface FormData {
   email: string
   phone: string
   company: string
-  // Step 2 - Quote
+  // Step 2 - Shared / Quote
   facility_type: string
   frequency: string
   suburb_or_postcode: string
   approx_sqm: string
-  // Step 2 - Franchise
-  franchise_region: string
-  franchise_investment: string
-  franchise_experience: string
-  // Step 2 - Jobs
-  job_role: string
-  job_location: string
-  cv_upload: File | null
-  job_availability: string
+  // Step 2 - Swab Test
+  swab_purpose: string
+  swab_points: string
   // Step 3
   compliance_needs: string[]
   comments: string
@@ -44,13 +38,8 @@ const initialData: FormData = {
   frequency: '',
   suburb_or_postcode: '',
   approx_sqm: '',
-  franchise_region: '',
-  franchise_investment: '',
-  franchise_experience: '',
-  job_role: '',
-  job_location: '',
-  cv_upload: null,
-  job_availability: '',
+  swab_purpose: '',
+  swab_points: '',
   compliance_needs: [],
   comments: ''
 }
@@ -86,7 +75,7 @@ const ContactForm: React.FC = () => {
     return (
       <div className="form-main">
         <div className="form-card">
-          <SuccessState />
+          <SuccessState enquiryType={formData.enquiry_type} />
         </div>
       </div>
     )

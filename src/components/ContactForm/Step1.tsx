@@ -17,7 +17,7 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
     if (!data.last_name.trim()) newErrors.last_name = 'Please enter your last name'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) newErrors.email = 'Please enter a valid email address'
     if (data.phone.replace(/\s/g, '').length < 8) newErrors.phone = 'Please enter a valid phone number'
-    if (data.enquiry_type === 'quote' && !data.company.trim()) newErrors.company = 'Please enter your company or facility name'
+    if ((data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && !data.company.trim()) newErrors.company = 'Please enter your company or facility name'
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -52,26 +52,13 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
           <input 
             type="radio" 
             name="enquiry_type" 
-            value="franchise" 
-            checked={data.enquiry_type === 'franchise'} 
-            onChange={() => onTypeChange('franchise')} 
+            value="swab" 
+            checked={data.enquiry_type === 'swab'} 
+            onChange={() => onTypeChange('swab')} 
           />
           <span className="enquiry-type-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            Medical Cleaning Franchise
-          </span>
-        </label>
-        <label className="enquiry-type-option">
-          <input 
-            type="radio" 
-            name="enquiry_type" 
-            value="jobs" 
-            checked={data.enquiry_type === 'jobs'} 
-            onChange={() => onTypeChange('jobs')} 
-          />
-          <span className="enquiry-type-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-            Clinical Careers
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4.5 3h15" strokeLinecap="round" /><path d="M6 3v12c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4V3" /><path d="M9 12h6M9 8h6" strokeLinecap="round" /><circle cx="12" cy="12" r="2" /></svg>
+            Request a Swab Test
           </span>
         </label>
       </div>
@@ -126,7 +113,7 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
         </div>
       </div>
 
-      {data.enquiry_type === 'quote' && (
+      {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
         <div className="field-group">
           <label className="field-label">Company / Facility Name <span className="required">*</span></label>
           <input 
