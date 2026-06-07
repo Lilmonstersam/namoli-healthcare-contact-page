@@ -1,10 +1,10 @@
 import React from 'react'
 
 interface SuccessStateProps {
-  enquiryType?: 'quote' | 'swab'
+  enquiryType?: 'quote'
 }
 
-const SuccessState: React.FC<SuccessStateProps> = ({ enquiryType = 'quote' }) => {
+const SuccessState: React.FC<SuccessStateProps> = () => {
   return (
     <div className="success-state visible">
       <div className="success-icon">
@@ -14,11 +14,7 @@ const SuccessState: React.FC<SuccessStateProps> = ({ enquiryType = 'quote' }) =>
       </div>
       <h2 className="success-title">Enquiry Received</h2>
       <p className="success-message">
-        {enquiryType === 'swab' ? (
-          "Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility's requirements and arrange a clinical swab test audit."
-        ) : (
-          "Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility's requirements and arrange a clinical cleaning audit."
-        )}
+        Thank you for contacting Namoli Healthcare. Our clinical solutions advisor will call you to discuss your facility's requirements and arrange a clinical cleaning audit.
       </p>
       <div className="success-actions">
         <button 

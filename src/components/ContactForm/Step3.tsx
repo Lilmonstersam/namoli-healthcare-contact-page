@@ -29,39 +29,21 @@ const Step3: React.FC<Step3Props> = ({ data, updateData, onSubmit, onBack, isSub
       <div className="review-summary">
         <div className="review-item">
           <span className="review-label">Enquiry Type</span>
-          <span className="review-value">
-            {data.enquiry_type === 'quote' ? 'Clinical Quote' : 'Swab Test'}
-          </span>
+          <span className="review-value">Clinical Quote</span>
         </div>
         <div className="review-item">
           <span className="review-label">Contact</span>
           <span className="review-value">{data.first_name} {data.last_name} ({data.email})</span>
         </div>
-        {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
+        {data.enquiry_type === 'quote' && (
           <div className="review-item">
             <span className="review-label">Facility</span>
             <span className="review-value">{data.facility_type} in {data.suburb_or_postcode}</span>
           </div>
         )}
-        {data.enquiry_type === 'swab' && (
-          <>
-            <div className="review-item">
-              <span className="review-label">Swab Purpose</span>
-              <span className="review-value">{data.swab_purpose}</span>
-            </div>
-            {data.swab_points && (
-              <div className="review-item">
-                <span className="review-label">Swab Points</span>
-                <span className="review-value">
-                  {data.swab_points === '50-plus' ? '50+ points' : data.swab_points === 'not-sure' ? 'Not sure' : `${data.swab_points} points`}
-                </span>
-              </div>
-            )}
-          </>
-        )}
       </div>
 
-      {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
+      {data.enquiry_type === 'quote' && (
         <div className="field-group" style={{ marginTop: '20px', marginBottom: '20px' }}>
           <label className="field-label">Required Compliance Standards <span className="optional">(select all that apply)</span></label>
           <div className="compliance-checklist" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>

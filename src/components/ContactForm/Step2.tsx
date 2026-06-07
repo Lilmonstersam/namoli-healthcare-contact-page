@@ -13,12 +13,9 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
 
   const validate = () => {
     const newErrors: Record<string, string> = {}
-    if (data.enquiry_type === 'quote' || data.enquiry_type === 'swab') {
+    if (data.enquiry_type === 'quote') {
       if (!data.facility_type) newErrors.facility_type = 'Please select a facility type'
       if (!data.suburb_or_postcode.trim()) newErrors.suburb_or_postcode = 'Please enter the suburb or postcode'
-    }
-    if (data.enquiry_type === 'swab') {
-      if (!data.swab_purpose) newErrors.swab_purpose = 'Please select a swab test purpose'
     }
 
     setErrors(newErrors)
@@ -33,17 +30,10 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
 
   return (
     <div className="form-step active">
-      {/* SHARED FIELDS FOR QUOTE & SWAB */}
-      {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
+      {data.enquiry_type === 'quote' && (
         <div className="conditional-fields visible">
-          <h3 className="step-title">
-            {data.enquiry_type === 'swab' ? 'Swab Test Details' : 'Facility Details'}
-          </h3>
-          <p className="step-subtitle">
-            {data.enquiry_type === 'swab' 
-              ? 'Tell us about your facility and swab testing requirements.' 
-              : 'Tell us about your facility and cleaning requirements.'}
-          </p>
+          <h3 className="step-title">Facility Details</h3>
+          <p className="step-subtitle">Tell us about your facility and cleaning requirements.</p>
 
           <div className="field-group">
             <label className="field-label">Facility Type <span className="required">*</span></label>
@@ -157,49 +147,7 @@ const Step2: React.FC<Step2Props> = ({ data, updateData, onNext, onBack }) => {
             </div>
           )}
 
-          {/* Swab Test specific fields */}
-          {data.enquiry_type === 'swab' && (
-            <>
-              <div className="field-group">
-                <label className="field-label">Swab Test Purpose <span className="required">*</span></label>
-                <select 
-                  className={`field-select ${errors.swab_purpose ? 'error' : ''}`}
-                  value={data.swab_purpose}
-                  onChange={e => updateData({ swab_purpose: e.target.value })}
-                >
-                  <option value="" disabled>Select purpose…</option>
-                  <option value="Routine Hygiene Audit">Routine Hygiene Audit</option>
-                  <option value="Post-Outbreak Verification">Post-Outbreak Verification</option>
-                  <option value="Infection Control Compliance">Infection Control Compliance</option>
-                  <option value="Other / Special Request">Other / Special Request</option>
-                </select>
-                {errors.swab_purpose && <div className="field-error visible">{errors.swab_purpose}</div>}
-              </div>
 
-              <div className="field-group">
-                <label className="field-label">Estimated Swab Points</label>
-                <div className="radio-pills">
-                  {[
-                    { value: '10-25', label: '10 - 25 points' },
-                    { value: '25-50', label: '25 - 50 points' },
-                    { value: '50-plus', label: '50+ points' },
-                    { value: 'not-sure', label: 'Not Sure' }
-                  ].map(pts => (
-                    <label key={pts.value} className="radio-pill">
-                      <input 
-                        type="radio" 
-                        name="swab_points" 
-                        value={pts.value} 
-                        checked={data.swab_points === pts.value}
-                        onChange={e => updateData({ swab_points: e.target.value })}
-                      />
-                      <span className="radio-pill-label">{pts.label}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </>
-          )}
 
           <div className="field-row">
             <div className="field-group">

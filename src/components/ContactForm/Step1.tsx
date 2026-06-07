@@ -17,7 +17,7 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
     if (!data.last_name.trim()) newErrors.last_name = 'Please enter your last name'
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) newErrors.email = 'Please enter a valid email address'
     if (data.phone.replace(/\s/g, '').length < 8) newErrors.phone = 'Please enter a valid phone number'
-    if ((data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && !data.company.trim()) newErrors.company = 'Please enter your company or facility name'
+    if (data.enquiry_type === 'quote' && !data.company.trim()) newErrors.company = 'Please enter your company or facility name'
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -46,19 +46,6 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
           <span className="enquiry-type-label">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 5H2v7l6.29 6.29c.94.94 2.48.94 3.42 0l4.58-4.58c.94-.94.94-2.48 0-3.42L9 5z"/><path d="M6 9h.01"/></svg>
             Request a Clinical Quote
-          </span>
-        </label>
-        <label className="enquiry-type-option">
-          <input 
-            type="radio" 
-            name="enquiry_type" 
-            value="swab" 
-            checked={data.enquiry_type === 'swab'} 
-            onChange={() => onTypeChange('swab')} 
-          />
-          <span className="enquiry-type-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4.5 3h15" strokeLinecap="round" /><path d="M6 3v12c0 2.2 1.8 4 4 4h4c2.2 0 4-1.8 4-4V3" /><path d="M9 12h6M9 8h6" strokeLinecap="round" /><circle cx="12" cy="12" r="2" /></svg>
-            Request a Swab Test
           </span>
         </label>
       </div>
@@ -113,7 +100,7 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
         </div>
       </div>
 
-      {(data.enquiry_type === 'quote' || data.enquiry_type === 'swab') && (
+      {data.enquiry_type === 'quote' && (
         <div className="field-group">
           <label className="field-label">Company / Facility Name <span className="required">*</span></label>
           <input 

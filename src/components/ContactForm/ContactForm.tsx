@@ -5,7 +5,7 @@ import Step3 from './Step3'
 import SuccessState from './SuccessState'
 import ProgressBar from './ProgressBar'
 
-export type EnquiryType = 'quote' | 'swab'
+export type EnquiryType = 'quote'
 
 export interface FormData {
   enquiry_type: EnquiryType
@@ -19,9 +19,7 @@ export interface FormData {
   frequency: string
   suburb_or_postcode: string
   approx_sqm: string
-  // Step 2 - Swab Test
-  swab_purpose: string
-  swab_points: string
+
   // Step 3
   compliance_needs: string[]
   comments: string
@@ -38,8 +36,7 @@ const initialData: FormData = {
   frequency: '',
   suburb_or_postcode: '',
   approx_sqm: '',
-  swab_purpose: '',
-  swab_points: '',
+
   compliance_needs: [],
   comments: ''
 }
