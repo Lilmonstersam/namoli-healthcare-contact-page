@@ -121,7 +121,7 @@ const Step3: React.FC<Step3Props> = ({ data, updateData, onSubmit, onBack, isSub
       </div>
 
       <p className="privacy-note" style={{ textAlign: 'center', marginTop: '16px', lineHeight: '1.5' }}>
-        <strong>Clinical Assurance:</strong> All staff are infection-control certified, police checked, and comply with clinical sanitisation standards. Your clinical data is protected.
+        <strong>Clinical Assurance:</strong> All staff are trained in relevant Infection Control Procedures, police checked, and comply with clinical sanitisation standards. Your clinical data is protected.
       </p>
     </div>
   )
