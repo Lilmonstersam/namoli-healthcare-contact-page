@@ -31,24 +31,7 @@ const Step1: React.FC<Step1Props> = ({ data, updateData, onNext, onTypeChange })
 
   return (
     <div className="form-step active">
-      <h3 className="step-title">What are you enquiring about?</h3>
-      <p className="step-subtitle">Select your enquiry type and provide your contact details.</p>
-
-      <div className="enquiry-type-control" role="radiogroup" aria-label="Enquiry type">
-        <label className="enquiry-type-option">
-          <input 
-            type="radio" 
-            name="enquiry_type" 
-            value="quote" 
-            checked={data.enquiry_type === 'quote'} 
-            onChange={() => onTypeChange('quote')} 
-          />
-          <span className="enquiry-type-label">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 5H2v7l6.29 6.29c.94.94 2.48.94 3.42 0l4.58-4.58c.94-.94.94-2.48 0-3.42L9 5z"/><path d="M6 9h.01"/></svg>
-            Request a Clinical Quote
-          </span>
-        </label>
-      </div>
+      <h3 className="step-title">Request a Clinical Quote</h3>
 
       <div className="field-row">
         <div className="field-group">
