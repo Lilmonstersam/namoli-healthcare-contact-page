@@ -1008,6 +1008,41 @@ a:hover { color: var(--color-accent-hover); }
   color: var(--color-text-muted);
 }
 
+/* Review Summary */
+.review-summary {
+  background: var(--color-bg-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.review-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.4;
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 8px;
+}
+.review-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.review-label {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.review-value {
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: right;
+}
+
+
 /* Privacy note */
 .privacy-note {
   font-size: 11px;
